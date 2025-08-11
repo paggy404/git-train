@@ -11,10 +11,11 @@
 </head>
 
 <body>
+
     <!-- Navigation Bar -->
     <nav class="navbar bg-body-tertiary fixed-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Offcanvas navbar</a>
+            <a class="navbar-brand" href="#"><img src="./imag/logo-m.jpg" alt="train_logo-m"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,18 +23,37 @@
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+                    <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> -->
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <form class="d-flex mt-3 pb-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 pb-5">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#">首頁</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">線上訂票</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">鐵路服務</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">鐵道旅遊</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">商業服務</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">關於台鐵</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">常見問題</a>
+                        </li>
+                        <!-- <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Dropdown
@@ -46,12 +66,15 @@
                                 </li>
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
-                    <form class="d-flex mt-3" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item"> <a class="nav-link" href="#">語言</a></li>
+
+                        <li class="navbar-link"><a class="nav-link" href="#">網站導覽</a></li>
+                        <li class="navbar-link"><a class="nav-link" href="#">會員登入</a></li>
+                    </ul>
+
                 </div>
             </div>
         </div>
@@ -62,14 +85,8 @@
         <div class="container">
             <!-- Hero Section -->
             <section class="hero-section">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <h1 class="hero-title">台鐵線上訂票</h1>
-                        <p class="hero-subtitle">快速便利的火車票預訂服務</p>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="/placeholder.svg?height=300&width=400" alt="台鐵列車" class="img-fluid hero-image">
-                    </div>
+                <div class="row align-items-center pt-5">
+                    <h5>台鐵列車</h5>
                 </div>
             </section>
 
@@ -255,6 +272,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
