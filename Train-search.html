@@ -7,7 +7,9 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -96,57 +98,66 @@
                     <div class="card-header">
                         <h2 class="card-title">
                             <i class="bi bi-train-front me-2"></i>
-                            車票預訂
+                            車票查詢
                         </h2>
                     </div>
                     <div class="card-body">
+                        <!-- breadcrumb -->
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb pb-4">
+                                <li class="breadcrumb-item active" aria-current="page">線上訂票</li>
+                                <li class="breadcrumb-item"><a href="#">車票查詢</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">結帳</li>
+                                <li class="breadcrumb-item active" aria-current="page">取票</li>
+                            </ol>
+                        </nav>
+
                         <form id="bookingForm" class="booking-form">
                             <!-- Trip Type -->
-                            <div class="row mb-4">
-                                <div class="col-12">
-                                    <div class="trip-type-selector">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="tripType" id="oneWay"
-                                                value="oneWay" checked>
-                                            <label class="form-check-label" for="oneWay">單程</label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="tripType" id="roundTrip"
-                                                value="roundTrip">
-                                            <label class="form-check-label" for="roundTrip">來回</label>
-                                        </div>
-                                    </div>
+                            <div class="trip-type pb-3">
+                                <div class="dropdown">
+                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        行程一
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">行程一</a></li>
+                                        <li><a class="dropdown-item" href="#">行程二</a></li>
+                                        <li><a class="dropdown-item" href="#">行程三</a></li>
+                                    </ul>
                                 </div>
                             </div>
 
                             <!-- Station Selection -->
-                            <div class="row mb-4">
-                                <div class="col-md-5">
-                                    <label for="departureStation" class="form-label">起程站</label>
-                                    <select class="form-select station-select" id="departureStation" required>
-                                        <option value="">請選擇起程站</option>
-                                        <option value="taipei">台北</option>
-                                        <option value="taichung">台中</option>
-                                        <option value="kaohsiung">高雄</option>
-                                        <option value="hualien">花蓮</option>
-                                        <option value="taitung">台東</option>
-                                    </select>
+                            <div class="station d-flex justify-content-between">
+
+                                <div class="station-start col-md-5 pb-3">
+                                    <label for="exampleDataList" class="form-label">出發站</label>
+                                    <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                        placeholder="Type to search...">
+                                    <datalist id="datalistOptions">
+                                        <option value="台北">
+                                        <option value="桃園"></option>
+                                        <option value="台中">
+                                        <option value="台南">
+                                        <option value="高雄">
+                                    </datalist>
                                 </div>
-                                <div class="col-md-2 d-flex align-items-end justify-content-center">
-                                    <button type="button" class="btn btn-outline-primary swap-btn" id="swapStations">
-                                        <i class="bi bi-arrow-left-right"></i>
-                                    </button>
-                                </div>
-                                <div class="col-md-5">
-                                    <label for="arrivalStation" class="form-label">到達站</label>
-                                    <select class="form-select station-select" id="arrivalStation" required>
-                                        <option value="">請選擇到達站</option>
-                                        <option value="taipei">台北</option>
-                                        <option value="taichung">台中</option>
-                                        <option value="kaohsiung">高雄</option>
-                                        <option value="hualien">花蓮</option>
-                                        <option value="taitung">台東</option>
-                                    </select>
+
+                                <button type="button" class="btn"><i class="fa-solid fa-repeat"></i></button>
+
+                                <div class="station-end col-md-5">
+                                    <label for="exampleDataList" class="form-label">抵達站</label>
+                                    <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                        placeholder="Type to search...">
+                                    <datalist id="datalistOptions">
+                                        <option value="台北">
+                                        <option value="桃園"></option>
+                                        <option value="台中">
+                                        <option value="台南">
+                                        <option value="高雄">
+                                    </datalist>
                                 </div>
                             </div>
 
@@ -156,101 +167,74 @@
                                     <label for="departureDate" class="form-label">出發日期</label>
                                     <input type="date" class="form-control" id="departureDate" required>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="departureTime" class="form-label">出發時間</label>
-                                    <select class="form-select" id="departureTime">
-                                        <option value="">不指定</option>
-                                        <option value="06:00">06:00 以後</option>
-                                        <option value="09:00">09:00 以後</option>
-                                        <option value="12:00">12:00 以後</option>
-                                        <option value="15:00">15:00 以後</option>
-                                        <option value="18:00">18:00 以後</option>
-                                    </select>
+
+                            </div>
+
+
+                            <!-- Passenger -->
+                            <div class="passenger pb-3">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    票種
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <ol>
+                                                    <li class="adult pb-2"><label for="tentacles">Number of tentacles
+                                                            (0-6):</label>
+
+                                                        <input type="number" id="tentacles" name="tentacles" min="0"
+                                                            max="6" />
+                                                    </li>
+
+                                                    <li class="children pb-2"><label for="tentacles">Number of tentacles
+                                                            (0-6):</label>
+
+                                                        <input type="number" id="tentacles" name="tentacles" min="0"
+                                                            max="6" />
+
+                                                    <li class="wheelchair"><label for="tentacles">Number of tentacles
+                                                            (0-6):</label>
+
+                                                        <input type="number" id="tentacles" name="tentacles" min="0"
+                                                            max="6" />
+                                                    </li>
+                                                    </li>
+
+                                                </ol>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <!-- Passenger and Class Selection -->
-                            <div class="row mb-4">
-                                <div class="col-md-4">
-                                    <label for="adultCount" class="form-label">成人票</label>
-                                    <select class="form-select" id="adultCount">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="childCount" class="form-label">兒童票</label>
-                                    <select class="form-select" id="childCount">
-                                        <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label for="trainClass" class="form-label">車種</label>
-                                    <select class="form-select" id="trainClass">
-                                        <option value="all">不限</option>
-                                        <option value="express">自強號</option>
-                                        <option value="semi-express">莒光號</option>
-                                        <option value="local">區間車</option>
-                                    </select>
-                                </div>
-                            </div>
 
-                            <!-- Search Button -->
-                            <div class="row">
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary btn-lg search-btn w-100">
-                                        <i class="bi bi-search me-2"></i>
-                                        開始查詢
-                                    </button>
-                                </div>
-                            </div>
+                            <!-- Train Selection -->
+
+
+
                         </form>
                     </div>
                 </div>
             </section>
 
-            <!-- Quick Links -->
-            <section class="quick-links-section">
-                <div class="row">
-                    <div class="col-md-3 col-6 mb-3">
-                        <div class="card quick-link-card">
-                            <div class="card-body text-center">
-                                <i class="bi bi-clock-history quick-link-icon"></i>
-                                <h5 class="card-title">時刻表查詢</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-3">
-                        <div class="card quick-link-card">
-                            <div class="card-body text-center">
-                                <i class="bi bi-currency-dollar quick-link-icon"></i>
-                                <h5 class="card-title">票價查詢</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-3">
-                        <div class="card quick-link-card">
-                            <div class="card-body text-center">
-                                <i class="bi bi-ticket-perforated quick-link-icon"></i>
-                                <h5 class="card-title">訂票紀錄</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-3">
-                        <div class="card quick-link-card">
-                            <div class="card-body text-center">
-                                <i class="bi bi-info-circle quick-link-icon"></i>
-                                <h5 class="card-title">乘車資訊</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
         </div>
     </main>
 
