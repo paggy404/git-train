@@ -16,6 +16,7 @@
     --primary-color: #00519C;
     --primary-300-color: #5289BC;
     --primary-light-color: #DEE8F2;
+    --gray-50-light-color: #e0e0e020;
     --gray-300-light-color: #B5B5B5;
     --gray-600-light-color: #7B7B7B;
     /* font-family */
@@ -24,17 +25,39 @@
     --Regular-font-weight: 400;
 }
 
+.display-card {
+    background-color: var(--bgc-w-color);
+    height: 20.4375rem;
+    margin-top: 1.25rem;
+    padding: 1rem;
+}
+
+/* .display-card .btn {
+    color: var(--text-color);
+} */
+
+/* screening-bar */
+.screening-bar {
+    background-color: var(--gray-50-light-color);
+}
+
 /* bookingForm */
 #bookingForm .form-label {
     color: var(--gray-600-light-color);
     font-weight: var(--semi-bold-font-weight);
 }
 
-#bookingForm .form-control,
+.form-control,
 .form-select {
     font-size: .75rem;
     color: var(--gray-300-light-color);
 }
+
+/* 沒反應？
+.form-control:active,
+.form-select:active {
+    color: var(--text-color);
+} */
 
 #bookingForm .form-check-input:checked {
     background-color: var(--primary-color);
@@ -97,7 +120,7 @@ header nav {
 /* main */
 
 main {
-    padding-top: 4.75rem;
+    padding-top: 3.125rem;
 }
 
 h4 {
@@ -107,7 +130,7 @@ h4 {
 .container {
     position: absolute;
     background-color: var(--bgc-b-color);
-    height: 70vh;
+    height: 85vh;
 }
 
 .navbar-toggler-icon {

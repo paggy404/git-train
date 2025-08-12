@@ -105,7 +105,7 @@
 
                             <div class="station-start col-md-5 pb-3 me-2 ">
                                 <label for="exampleDataList" class="form-label fs-6">出發站</label>
-                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                <input class="form-control form-control-lg" list="datalistOptions" id="exampleDataList"
                                     placeholder="Type to search...">
                                 <datalist id="datalistOptions">
                                     <option value="台北">
@@ -120,7 +120,7 @@
 
                             <div class="station-end col-md-5">
                                 <label for="exampleDataList" class="form-label fs-6">抵達站</label>
-                                <input class="form-control" list="datalistOptions" id="exampleDataList"
+                                <input class="form-control form-control-lg" list="datalistOptions" id="exampleDataList"
                                     placeholder="Type to search...">
                                 <datalist id="datalistOptions">
                                     <option value="台北">
@@ -136,7 +136,7 @@
                         <div class="row pb-3">
                             <div class="col-md-6 w-100">
                                 <label for="departureDate" class="form-label fs-6">出發日期</label>
-                                <input type="date" class="form-control " id="departureDate" required>
+                                <input type="date" class="form-control form-control-lg" id="departureDate" required>
                             </div>
 
                         </div>
@@ -145,7 +145,7 @@
                         <div class="d-flex justify-content-start pb-3 ">
                             <!-- Passenger -->
                             <div class="passenger w-50 me-2">
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select form-select-lg" aria-label="Default select example">
                                     <option selected>票種</option>
                                     <option value="1">大人</option>
                                     <option value="2">親子</option>
@@ -156,7 +156,7 @@
 
                             <!-- Train Selection -->
                             <div class="train w-50">
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select form-select-lg" aria-label="Default select example">
                                     <option selected>車種</option>
                                     <option value="1">太魯閣</option>
                                     <option value="2">普悠瑪</option>
@@ -171,7 +171,7 @@
                         <!-- seat -->
                         <div class="seat d-flex justify-content-start align-items-center">
                             <div class="seat-select w-auto me-3">
-                                <select class="form-select" aria-label="Default select example">
+                                <select class="form-select form-select-lg" aria-label="Default select example">
                                     <option selected>座位偏好</option>
                                     <option value="1">不指定</option>
                                     <option value="2">靠窗</option>
@@ -200,15 +200,41 @@
                 </div>
 
                 <div class="display-card rounded-3">
-                    <div class="screening-bar"></div>
+                    <!-- screening-bar -->
+                    <div class="screening-bar rounded-3 d-flex justify-content-between">
+                        <div class="screening-right d-flex justify-content-start">
+                            <select class="form-select form-select-sm me-1" aria-label="Small select example">
+                                <option selected>出發時間</option>
+                                <option value="1">6:30</option>
+                                <option value="2">7:00</option>
+                                <option value="3">7:30</option>
+                            </select>
+                            <button class="btn me-1"><i class="bi bi-dash"></i></button>
+                            <select class="form-select form-select-sm" aria-label="Small select example">
+                                <option selected>抵達時間</option>
+                                <option value="1">6:30</option>
+                                <option value="2">7:00</option>
+                                <option value="3">7:30</option>
+                            </select>
+                        </div>
+
+                        <div class="screening-left">
+                            <a href="">票價資訊</a>
+                            <button><i class="bi bi-sliders"></i></button>
+                        </div>
+
+                    </div>
+                    <div class="display-box"></div>
                 </div>
-                <!-----------------------------------------------------------------------------------------------confirm-ticket
-    ------------------------------------------------------------------------------------------------>
-                <div class="confirm-ticket">
-                    <div class="confirm-box"></div>
-                    <div class="checkout-btn"></div>
-                </div>
+
             </div>
+            <!-----------------------------------------------------------------------------------------------confirm-ticket
+    ------------------------------------------------------------------------------------------------>
+            <div class="confirm-ticket">
+                <div class="confirm-box"></div>
+                <div class="checkout-btn"></div>
+            </div>
+        </div>
         </div>
 
 
