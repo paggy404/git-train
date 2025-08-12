@@ -1,0 +1,24 @@
+@use "mixin" as * 
+@use 'sass:list'
+
+@include wnpx(96)
+
+$tcColor: #DEE8F2, #5289BC, #00519C,#00376A,#B5B5B5,#7B7B7B,#4B4948,
+
+@for $i from 1 through 7
+    @include bgc(bg-tc#{$i}, list.nth($tcColor, $i))
+    @include color(text-tc#{$i}, list.nth($tcColor, $i))
+
+.main-content-1
+    background-color: list.nth($tcColor, 4)
+    height: 90vh
+
+.breadcrumb-item.active
+    color: list.nth($tcColor, 5)
+
+// .breadcrumb-item.active
+//     color: list.nth($tcColor, 7)
+
+.search
+    .form-control
+        color: list.nth($tcColor, 5)

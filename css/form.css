@@ -1,0 +1,72 @@
+.w96px {
+  width: 96px;
+}
+
+.bg-tc1 {
+  background-color: #DEE8F2;
+}
+
+.text-tc1 {
+  color: #DEE8F2;
+}
+
+.bg-tc2 {
+  background-color: #5289BC;
+}
+
+.text-tc2 {
+  color: #5289BC;
+}
+
+.bg-tc3 {
+  background-color: #00519C;
+}
+
+.text-tc3 {
+  color: #00519C;
+}
+
+.bg-tc4 {
+  background-color: #00376A;
+}
+
+.text-tc4 {
+  color: #00376A;
+}
+
+.bg-tc5 {
+  background-color: #B5B5B5;
+}
+
+.text-tc5 {
+  color: #B5B5B5;
+}
+
+.bg-tc6 {
+  background-color: #7B7B7B;
+}
+
+.text-tc6 {
+  color: #7B7B7B;
+}
+
+.bg-tc7 {
+  background-color: #4B4948;
+}
+
+.text-tc7 {
+  color: #4B4948;
+}
+
+.main-content-1 {
+  background-color: #00376A;
+  height: 90vh;
+}
+
+.breadcrumb-item.active {
+  color: #B5B5B5;
+}
+
+.search .form-control {
+  color: #B5B5B5;
+}/*# sourceMappingURL=form.css.map */
