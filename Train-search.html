@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./css/form.css">
 </head>
 
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar bg-body-tertiary fixed-top">
+    <nav class="navbar bg-white sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"><img src="./imag/logo-m.jpg" alt="train_logo-m"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
@@ -83,25 +85,20 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="main-content">
-        <div class="container">
+    <main class="main-content-1 w-100">
+        <div class="container w-100">
             <!-- Hero Section -->
-            <section class="hero-section">
-                <div class="row align-items-center pt-5">
-                    <h5>台鐵列車</h5>
-                </div>
-            </section>
 
             <!-- Ticket Booking Form -->
-            <section class="booking-section">
-                <div class="card booking-card">
-                    <div class="card-header">
-                        <h2 class="card-title">
-                            <i class="bi bi-train-front me-2"></i>
+            <section class="booking-section w-100 pt-5 px-3">
+                <div class="card booking-card bg-white">
+                    <div class="card-header bg-white">
+                        <h2 class="card-title row align-items-center pt-2 ">
+                            <i class="bi-train-front me-2"></i>
                             車票查詢
                         </h2>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body w-100">
                         <!-- breadcrumb -->
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb pb-4">
@@ -112,7 +109,7 @@
                             </ol>
                         </nav>
 
-                        <form id="bookingForm" class="booking-form">
+                        <form id="bookingForm" class="booking-form w-100">
                             <!-- Trip Type -->
                             <div class="trip-type pb-3">
                                 <div class="dropdown">
@@ -130,9 +127,9 @@
                             </div>
 
                             <!-- Station Selection -->
-                            <div class="station d-flex justify-content-between">
+                            <div class="station d-flex justify-content-start w-100">
 
-                                <div class="station-start col-md-5 pb-3">
+                                <div class="station-start col-md-5 pb-3 me-2 ">
                                     <label for="exampleDataList" class="form-label">出發站</label>
                                     <input class="form-control" list="datalistOptions" id="exampleDataList"
                                         placeholder="Type to search...">
@@ -145,7 +142,7 @@
                                     </datalist>
                                 </div>
 
-                                <button type="button" class="btn"><i class="fa-solid fa-repeat"></i></button>
+                                <button type="button" class="btn me-2"><i class="fa-solid fa-repeat"></i></button>
 
                                 <div class="station-end col-md-5">
                                     <label for="exampleDataList" class="form-label">抵達站</label>
@@ -162,78 +159,81 @@
                             </div>
 
                             <!-- Date and Time Selection -->
-                            <div class="row mb-4">
-                                <div class="col-md-6">
+                            <div class="row pb-3 w-100 ">
+                                <div class="col-md-6 w-100">
                                     <label for="departureDate" class="form-label">出發日期</label>
-                                    <input type="date" class="form-control" id="departureDate" required>
+                                    <input type="date" class="form-control " id="departureDate" required>
                                 </div>
 
                             </div>
 
+                            <!-- Passenger and Train Selection -->
+                            <div class="d-flex justify-content-start pb-3 ">
+                                <!-- Passenger -->
+                                <div class="passenger w-50 me-2">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>票種</option>
+                                        <option value="1">大人</option>
+                                        <option value="2">親子</option>
+                                        <option value="3">輪椅</option>
+                                    </select>
+                                </div>
 
-                            <!-- Passenger -->
-                            <div class="passenger pb-3">
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">
-                                    票種
-                                </button>
 
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <ol>
-                                                    <li class="adult pb-2"><label for="tentacles">Number of tentacles
-                                                            (0-6):</label>
+                                <!-- Train Selection -->
+                                <div class="train w-50">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>車種</option>
+                                        <option value="1">太魯閣</option>
+                                        <option value="2">普悠瑪</option>
+                                        <option value="3">莒光</option>
+                                        <option value="4">自強</option>
+                                        <option value="5">復興</option>
+                                        <option value="6">區間</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                                                        <input type="number" id="tentacles" name="tentacles" min="0"
-                                                            max="6" />
-                                                    </li>
+                            <!-- seat -->
+                            <div class="seat d-flex justify-content-start align-items-center">
+                                <div class="seat-select w-auto me-3">
+                                    <select class="form-select" aria-label="Default select example">
+                                        <option selected>座位</option>
+                                        <option value="1">不指定</option>
+                                        <option value="2">靠窗</option>
+                                        <option value="3">靠走道</option>
+                                        <option value="3">自由座</option>
+                                    </select>
+                                </div>
 
-                                                    <li class="children pb-2"><label for="tentacles">Number of tentacles
-                                                            (0-6):</label>
-
-                                                        <input type="number" id="tentacles" name="tentacles" min="0"
-                                                            max="6" />
-
-                                                    <li class="wheelchair"><label for="tentacles">Number of tentacles
-                                                            (0-6):</label>
-
-                                                        <input type="number" id="tentacles" name="tentacles" min="0"
-                                                            max="6" />
-                                                    </li>
-                                                    </li>
-
-                                                </ol>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                            </div>
-                                        </div>
+                                <div class="seat-checks d-flex justify-content-between">
+                                    <div class="form-check me-1">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkChecked"
+                                            checked>
+                                        <label class="form-check-label" for="checkChecked">
+                                            同班車換座
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                        <label class="form-check-label" for="checkDefault">
+                                            接受轉乘
+                                        </label>
                                     </div>
                                 </div>
+
                             </div>
-
-
-                            <!-- Train Selection -->
-
-
-
                         </form>
                     </div>
                 </div>
             </section>
 
+
+        </div>
+    </main>
+
+    <main class="main-content-2 w-100">
+        <div class="container bg-white w-100">
 
         </div>
     </main>
