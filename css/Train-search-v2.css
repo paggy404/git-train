@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Noto Sans TC", sans-serif;
+    color: var(--text-color);
 }
 
 
@@ -15,6 +16,7 @@
     --bgc-w-color: #ffffff;
     --primary-color: #00519C;
     --primary-300-color: #5289BC;
+    --primary-400-color: #296DAC;
     --primary-light-color: #DEE8F2;
     --gray-50-light-color: #e0e0e020;
     --gray-50-color: #e0e0e0;
@@ -24,6 +26,84 @@
     --bold-font-weight: 700;
     --semi-bold-font-weight: 500;
     --Regular-font-weight: 400;
+}
+
+/* modal-ticket */
+
+.modal-ticket .delete {
+    background-color: var(--bgc-w-color);
+    border: none;
+    color: rgb(201, 46, 46);
+    font-size: 1rem;
+}
+
+.modal-footer button:nth-child(2) {
+    color: var(--bgc-w-color);
+    background-color: var(--primary-color);
+
+}
+
+.modal-ticket .train {
+    font-size: .75rem;
+    padding: .25rem .5rem;
+    background-color: var(--primary-400-color);
+    color: var(--bgc-w-color);
+    border: none;
+    border-radius: .25rem;
+}
+
+.modal-ticket .date {
+    margin-bottom: .75rem;
+}
+
+.modal-ticket h6 {
+    font-weight: var(--semi-bold-font-weight);
+}
+
+.passenger p {
+    font-size: .75rem;
+    color: var(--primary-color);
+    margin-bottom: 0;
+}
+
+/* onfirm-ticket */
+.currency {
+    margin: 0;
+}
+
+.checkout-btn {
+    background-color: var(--primary-color);
+    padding: 16px 24px;
+    color: var(--bgc-w-color);
+    border-radius: .375rem;
+    border: none;
+}
+
+.checkout-btn h6 {
+    color: var(--bgc-w-color);
+    font-weight: var(--semi-bold-font-weight);
+}
+
+.confirm-btn {
+    background-color: var(--primary-light-color);
+    padding: 16px 24px;
+    color: var(--bgc-w-color);
+    border-radius: .375rem;
+    border: none;
+}
+
+.confirm-btn h6 {
+    color: var(--primary-color);
+    font-weight: var(--semi-bold-font-weight);
+}
+
+.confirm-ticket {
+    background-color: var(--bgc-w-color);
+}
+
+.confirm-ticket>div {
+    background-color: var(--gray-50-light-color);
+    padding: .625rem 1.5rem;
 }
 
 /* display-card */
@@ -59,7 +139,8 @@
 
 .location p,
 h5,
-h6 {
+h6,
+h4 {
     margin-bottom: 0;
     color: var(--text-color);
 }
@@ -78,10 +159,12 @@ a {
     color: var(--primary-color);
 }
 
+/* 車票第三張，無法全顯示？ */
 .display-card {
     background-color: var(--bgc-w-color);
     height: 100%;
     margin-top: 1.25rem;
+    /* margin-bottom: 6.25rem; */
 }
 
 .display-box {
@@ -140,6 +223,11 @@ a {
     font-weight: var(--bold-font-weight);
 }
 
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+}
+
 /* search  breadcrumb*/
 .search .breadcrumb-item.active:nth-child(4) {
     font-size: .75rem;
@@ -186,17 +274,25 @@ header nav {
 /* main */
 
 main {
+    height: 100%;
     padding-top: 3.125rem;
+    padding-bottom: 20%;
 }
 
-h4 {
+main h4 {
     font-weight: var(--bold-font-weight);
 }
 
-.container {
+.bg {
     position: absolute;
     background-color: var(--bgc-b-color);
-    height: 35.625rem;
+    height: 35.75rem;
+    width: 100%;
+    z-index: -1;
+}
+
+main .container {
+    height: 100%;
 }
 
 .navbar-toggler-icon {
