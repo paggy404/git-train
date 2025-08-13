@@ -17,40 +17,106 @@
     --primary-300-color: #5289BC;
     --primary-light-color: #DEE8F2;
     --gray-50-light-color: #e0e0e020;
-    --gray-300-light-color: #B5B5B5;
-    --gray-600-light-color: #7B7B7B;
+    --gray-50-color: #e0e0e0;
+    --gray-300-color: #B5B5B5;
+    --gray-600-color: #7B7B7B;
     /* font-family */
     --bold-font-weight: 700;
     --semi-bold-font-weight: 500;
     --Regular-font-weight: 400;
 }
 
-.display-card {
-    background-color: var(--bgc-w-color);
-    height: 20.4375rem;
-    margin-top: 1.25rem;
-    padding: 1rem;
+/* display-card */
+
+.ticket {
+    border-bottom: var(--gray-50-color) solid 1px;
+
 }
 
-/* .display-card .btn {
+.ticket-item:nth-child(1) i {
+    color: var(--gray-600-color);
+    font-size: 1.25rem;
+}
+
+.ticket-item:nth-child(3) button:nth-child(1) {
+    background-color: var(--primary-color);
+    padding: 8px 12px;
+    color: var(--bgc-w-color);
+    border-radius: .375rem;
+}
+
+.ticket-item:nth-child(3) button:nth-child(2) {
+    padding: 8px 12px;
+    color: var(--primary-color);
+    border-radius: .375rem;
+    border: var(--primary-color) solid 1px;
+}
+
+.spend-time {
+    color: var(--gray-600-color);
+    margin-bottom: 0;
+}
+
+.location p,
+h5,
+h6 {
+    margin-bottom: 0;
     color: var(--text-color);
-} */
+}
+
+.ticket-content p,
+a {
+    font-size: .75rem;
+}
+
+.ticket-item a {
+    color: var(--primary-color);
+}
+
+.screening-left a {
+    font-size: .75rem;
+    color: var(--primary-color);
+}
+
+.display-card {
+    background-color: var(--bgc-w-color);
+    height: 100%;
+    margin-top: 1.25rem;
+}
+
+.display-box {
+    height: 100%;
+
+}
+
+
+.display-card button,
+.screening-left button {
+    font-size: .75rem;
+    border: none;
+    background-color: #fff0;
+    color: var(--text-color);
+}
 
 /* screening-bar */
 .screening-bar {
     background-color: var(--gray-50-light-color);
+    border-bottom: var(--gray-50-color) solid 1px;
+    padding: .5rem 1rem;
 }
+
+
 
 /* bookingForm */
 #bookingForm .form-label {
-    color: var(--gray-600-light-color);
+    color: var(--gray-600-color);
     font-weight: var(--semi-bold-font-weight);
 }
 
 .form-control,
 .form-select {
     font-size: .75rem;
-    color: var(--gray-300-light-color);
+    color: var(--gray-300-color);
 }
 
 /* 沒反應？
@@ -78,13 +144,13 @@
 .search .breadcrumb-item.active:nth-child(4) {
     font-size: .75rem;
     font-weight: var(--Regular-font-weight);
-    color: var(--gray-300-light-color)
+    color: var(--gray-300-color)
 }
 
 .search .breadcrumb-item.active:nth-child(3) {
     font-size: .75rem;
     font-weight: var(--Regular-font-weight);
-    color: var(--gray-300-light-color)
+    color: var(--gray-300-color)
 }
 
 .search .breadcrumb-item a {
@@ -130,7 +196,7 @@ h4 {
 .container {
     position: absolute;
     background-color: var(--bgc-b-color);
-    height: 85vh;
+    height: 35.625rem;
 }
 
 .navbar-toggler-icon {
