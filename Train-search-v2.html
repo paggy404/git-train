@@ -19,8 +19,9 @@
     <!------------------------------------------------------------------------------------------------header
     ------------------------------------------------------------------------------------------------>
     <header>
-        <nav class="navbar bg-white fixed-top shadow">
-            <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg bg-white fixed-top">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
                 <a class="navbar-brand" href="#"><img src="./imag/logo-m.jpg" alt=""></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -33,7 +34,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
@@ -45,7 +46,7 @@
                                     aria-expanded="false">
                                     Dropdown
                                 </a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu me-aut">
                                     <li><a class="dropdown-item" href="#">Action</a></li>
                                     <li><a class="dropdown-item" href="#">Another action</a></li>
                                     <li>
@@ -55,10 +56,15 @@
                                 </ul>
                             </li>
                         </ul>
-                        <form class="d-flex mt-3" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
+
+                        <div class="navbar-2">
+                            <form class="d-flex " role="search">
+                                <input class="form-control mt-2" type="search" placeholder="Search"
+                                    aria-label="Search" />
+                                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                            </form>
+                            <button class="log-btn btn btn-outline-success mt-2" type="button">登入</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -70,279 +76,473 @@
     <main class="d-flex justify-content-center w-100">
         <div class="bg"></div>
         <div class="container w-100">
-            <h4 class="title h4 fs-4 text-white pt-5 pb-2">查詢車票</h4>
-            <div class="contents">
-                <!-----------------------------------------------------------------------------------------------search-ticket
+            <h2 class="title fs-2 text-white pb-2">查詢車票</h2>
+            <div class="contents d-flex justify-content-center align-items-start w-100">
+                <!-- search-box -->
+                <div class="search-box">
+                    <!-----------------------------------------------------------------------------------------------search-ticket
     ------------------------------------------------------------------------------------------------>
-                <div class="search rounded-3 shadow">
-                    <!-- breadcrumb -->
-                    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                        <ol class="breadcrumb d-flex align-items-center pb-1 w-100">
-                            <li class="breadcrumb-item active" aria-current="page">線上訂票</li>
-                            <li class="breadcrumb-item"><a href="#">車票查詢</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">結帳</li>
-                            <li class="breadcrumb-item active" aria-current="page">取票</li>
-                        </ol>
-                    </nav>
-                    <!-- bookingForm -->
-                    <form id="bookingForm" class="booking-form w-100">
-                        <!-- Trip Type -->
-                        <div class="trip-type pb-3">
-                            <div class="dropdown">
-                                <a class="btn rounded-0 fs-5 border-bottom dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    行程一
-                                </a>
+                    <div class="search rounded-3 shadow">
+                        <!-- breadcrumb -->
+                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                            <ol class="breadcrumb d-flex align-items-center pb-1 w-100">
+                                <li class="breadcrumb-item active" aria-current="page">線上訂票</li>
+                                <li class="breadcrumb-item"><a href="#">車票查詢</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">結帳</li>
+                                <li class="breadcrumb-item active" aria-current="page">取票</li>
+                            </ol>
+                        </nav>
+                        <!-- bookingForm -->
+                        <form id="bookingForm" class="booking-form w-100">
 
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">行程一</a></li>
-                                    <li><a class="dropdown-item" href="#">行程二</a></li>
-                                    <li><a class="dropdown-item" href="#">行程三</a></li>
-                                </ul>
-                            </div>
-                        </div>
+                            <div class="form-item">
+                                <!-- Trip Type -->
+                                <div class="select-box">
+                                    <div class="dropdown">
+                                        <a class="btn rounded-0 fs-5 border-bottom dropdown-toggle" href="#"
+                                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            行程一
+                                        </a>
 
-                        <!-- Station Selection -->
-                        <div class="station d-flex justify-content-start w-100">
-
-                            <div class="station-start col-md-5 pb-3 me-2 ">
-                                <label for="exampleDataList" class="form-label fs-6">出發站</label>
-                                <input class="form-control form-control-lg" list="datalistOptions" id="exampleDataList"
-                                    placeholder="Type to search...">
-                                <datalist id="datalistOptions">
-                                    <option value="台北">
-                                    <option value="桃園"></option>
-                                    <option value="台中">
-                                    <option value="台南">
-                                    <option value="高雄">
-                                </datalist>
-                            </div>
-
-                            <button type="button" class="btn me-2 text-tc7"><i class="fa-solid fa-repeat"></i></button>
-
-                            <div class="station-end col-md-5">
-                                <label for="exampleDataList" class="form-label fs-6">抵達站</label>
-                                <input class="form-control form-control-lg" list="datalistOptions" id="exampleDataList"
-                                    placeholder="Type to search...">
-                                <datalist id="datalistOptions">
-                                    <option value="台北">
-                                    <option value="桃園"></option>
-                                    <option value="台中">
-                                    <option value="台南">
-                                    <option value="高雄">
-                                </datalist>
-                            </div>
-                        </div>
-
-                        <!-- Date and Time Selection -->
-                        <div class="row pb-3">
-                            <div class="col-md-6 w-100">
-                                <label for="departureDate" class="form-label fs-6">出發日期</label>
-                                <input type="date" class="form-control form-control-lg" id="departureDate" required>
-                            </div>
-
-                        </div>
-
-                        <!-- Passenger and Train Selection -->
-                        <div class="d-flex justify-content-start pb-3 ">
-                            <!-- Passenger -->
-                            <div class="passenger w-50 me-2">
-                                <select class="form-select form-select-lg" aria-label="Default select example">
-                                    <option selected>票種</option>
-                                    <option value="1">大人</option>
-                                    <option value="2">親子</option>
-                                    <option value="3">輪椅</option>
-                                </select>
-                            </div>
-
-
-                            <!-- Train Selection -->
-                            <div class="train w-50">
-                                <select class="form-select form-select-lg" aria-label="Default select example">
-                                    <option selected>車種</option>
-                                    <option value="1">太魯閣</option>
-                                    <option value="2">普悠瑪</option>
-                                    <option value="3">莒光</option>
-                                    <option value="4">自強</option>
-                                    <option value="5">復興</option>
-                                    <option value="6">區間</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- seat -->
-                        <div class="seat d-flex justify-content-start align-items-center">
-                            <div class="seat-select w-auto me-3">
-                                <select class="form-select form-select-lg" aria-label="Default select example">
-                                    <option selected>座位偏好</option>
-                                    <option value="1">不指定</option>
-                                    <option value="2">靠窗</option>
-                                    <option value="3">靠走道</option>
-                                    <option value="3">自由座</option>
-                                </select>
-                            </div>
-
-                            <div class="seat-checks d-flex justify-content-between">
-                                <div class="form-check d-flex align-items-center me-2">
-                                    <input class="form-check-input" type="checkbox" value="" id="checkChecked" checked>
-                                    <label class="form-check-label ms-1" for="checkChecked">
-                                        同班車換座
-                                    </label>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">行程一</a></li>
+                                            <li><a class="dropdown-item" href="#">行程二</a></li>
+                                            <li><a class="dropdown-item" href="#">行程三</a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="form-check d-flex align-items-center">
-                                    <input class="form-check-input" type="checkbox" value="" id="checkDefault">
-                                    <label class="form-check-label ms-1" for="checkDefault">
-                                        接受轉乘
-                                    </label>
+
+                            </div>
+
+                            <div class="form-item">
+                                <!-- Station Selection -->
+                                <div class="select-box d-flex justify-content-start w-100">
+
+                                    <div class="station-start col-md-5 me-2 ">
+                                        <label for="exampleDataList" class="form-label fs-6">出發站</label>
+                                        <input class="form-control form-control-lg" list="datalistOptions"
+                                            id="exampleDataList" placeholder="Type to search...">
+                                        <datalist id="datalistOptions">
+                                            <option value="台北">
+                                            <option value="桃園"></option>
+                                            <option value="台中">
+                                            <option value="台南">
+                                            <option value="高雄">
+                                        </datalist>
+                                    </div>
+
+                                    <button type="button" class="btn me-2 text-tc7"><i
+                                            class="fa-solid fa-repeat"></i></button>
+
+                                    <div class="station-end col-md-5">
+                                        <label for="exampleDataList" class="form-label fs-6">抵達站</label>
+                                        <input class="form-control form-control-lg" list="datalistOptions"
+                                            id="exampleDataList" placeholder="Type to search...">
+                                        <datalist id="datalistOptions">
+                                            <option value="台北">
+                                            <option value="桃園"></option>
+                                            <option value="台中">
+                                            <option value="台南">
+                                            <option value="高雄">
+                                        </datalist>
+                                    </div>
+                                </div>
+
+                                <!-- Date Selection -->
+                                <div class="select-box row">
+                                    <div class="col-md-6 w-100">
+                                        <label for="departureDate" class="form-label fs-6">出發日期</label>
+                                        <input type="date" class="form-control form-control-lg" id="departureDate"
+                                            required>
+                                    </div>
+
                                 </div>
                             </div>
 
-                        </div>
-                    </form>
-                </div>
-                <!-----------------------------------------------------------------------------------------------display-card
+                            <div class="form-item">
+                                <!-- Passenger and Train Selection -->
+                                <div class="select-box d-flex justify-content-start">
+                                    <!-- Passenger -->
+                                    <div class="passenger w-50 me-2">
+                                        <select class="form-select form-select-lg" aria-label="Default select example">
+                                            <option selected>票種</option>
+                                            <option value="1">大人</option>
+                                            <option value="2">親子</option>
+                                            <option value="3">輪椅</option>
+                                        </select>
+                                    </div>
+
+
+                                    <!-- Train Selection -->
+                                    <div class="train w-50">
+                                        <select class="form-select form-select-lg" aria-label="Default select example">
+                                            <option selected>車種</option>
+                                            <option value="1">太魯閣</option>
+                                            <option value="2">普悠瑪</option>
+                                            <option value="3">莒光</option>
+                                            <option value="4">自強</option>
+                                            <option value="5">復興</option>
+                                            <option value="6">區間</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- seat -->
+                                <div class="select-box d-flex justify-content-start align-items-center">
+                                    <div class="seat-select w-auto me-3">
+                                        <select class="form-select form-select-lg" aria-label="Default select example">
+                                            <option selected>座位偏好</option>
+                                            <option value="1">不指定</option>
+                                            <option value="2">靠窗</option>
+                                            <option value="3">靠走道</option>
+                                            <option value="3">自由座</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="seat-checks d-flex justify-content-between">
+                                        <div class="form-check d-flex align-items-center me-2">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label ms-1" for="checkChecked">
+                                                同班車換座
+                                            </label>
+                                        </div>
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                            <label class="form-check-label ms-1" for="checkDefault">
+                                                接受轉乘
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-----------------------------------------------------------------------------------------------display-card
     ------------------------------------------------------------------------------------------------>
-                <div class="display-card rounded-3 shadow">
-                    <!-- screening-bar -->
-                    <div class="screening-bar rounded-top-3 d-flex justify-content-between">
-                        <div class="screening-right d-flex justify-content-start align-items-center">
-                            <select class="form-select form-select-sm me-1" aria-label="Small select example">
-                                <option selected>出發時間</option>
-                                <option value="1">6:30</option>
-                                <option value="2">7:00</option>
-                                <option value="3">7:30</option>
-                            </select>
-                            <button class="me-1"><i class="bi bi-dash"></i></button>
-                            <select class="form-select form-select-sm" aria-label="Small select example">
-                                <option selected>抵達時間</option>
-                                <option value="1">6:30</option>
-                                <option value="2">7:00</option>
-                                <option value="3">7:30</option>
-                            </select>
+                    <div class="display-card rounded-3 shadow">
+                        <!-- screening-bar -->
+                        <div class="screening-bar rounded-top-3 d-flex justify-content-between">
+                            <div class="screening-right d-flex justify-content-start align-items-center">
+                                <select class="form-select form-select-sm me-1" aria-label="Small select example">
+                                    <option selected>出發時間</option>
+                                    <option value="1">6:30</option>
+                                    <option value="2">7:00</option>
+                                    <option value="3">7:30</option>
+                                </select>
+                                <button class="me-1"><i class="bi bi-dash"></i></button>
+                                <select class="form-select form-select-sm" aria-label="Small select example">
+                                    <option selected>抵達時間</option>
+                                    <option value="1">6:30</option>
+                                    <option value="2">7:00</option>
+                                    <option value="3">7:30</option>
+                                </select>
+                            </div>
+
+                            <div class="screening-left d-flex justify-content-start align-items-center">
+                                <a href="" class="me-1">票價資訊</a>
+                                <button><i class="bi bi-sliders"></i></button>
+                            </div>
+
+                        </div>
+                        <!-- display-box -->
+                        <div class="display-box">
+                            <!-- ticket -->
+                            <div class="ticket py-4 px-4">
+                                <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
+                                    <a href="">山線</a>
+                                    <button><i class="bi bi-three-dots"></i></button>
+                                </div>
+                                <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
+                                    <div class="ticket-content">
+                                        <h5 class="time d-flex justify-content-center pb-1">06:12</h5>
+                                        <div class="location d-flex justify-content-between">
+                                            <p>基隆</p>
+                                            <p>Keelung</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="ticket-content">
+                                        <p class="spend-time d-flex justify-content-center">1 小時 21 分</p>
+                                        <img src="./imag/right-long-arrow.png" class="d-flex justify-content-center"
+                                            alt="right-long-arrow">
+                                    </div>
+
+                                    <div class="ticket-content">
+                                        <h5 class="time d-flex justify-content-center pb-1">07:33</h5>
+                                        <div class="location d-flex justify-content-between">
+                                            <p>桃園</p>
+                                            <p>Taoyuan</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ticket-item d-flex justify-content-between align-items-center">
+                                    <h6>自強105</h6>
+                                    <div>
+                                        <button class="book-ticket">訂票</button>
+                                        <button class="candidate">候補</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ticket py-4 px-4">
+                                <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
+                                    <a href="">山線</a>
+                                    <button><i class="bi bi-three-dots"></i></button>
+                                </div>
+                                <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
+                                    <div class="ticket-content">
+                                        <h5 class="time d-flex justify-content-center pb-1">06:12</h5>
+                                        <div class="location d-flex justify-content-between">
+                                            <p>基隆</p>
+                                            <p>Keelung</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="ticket-content">
+                                        <p class="spend-time d-flex justify-content-center">1 小時 21 分</p>
+                                        <img src="./imag/right-long-arrow.png" class="d-flex justify-content-center"
+                                            alt="right-long-arrow">
+                                    </div>
+
+                                    <div class="ticket-content">
+                                        <h5 class="time d-flex justify-content-center pb-1">07:33</h5>
+                                        <div class="location d-flex justify-content-between">
+                                            <p>桃園</p>
+                                            <p>Taoyuan</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ticket-item d-flex justify-content-between align-items-center">
+                                    <h6>自強105</h6>
+                                    <div>
+                                        <button class="book-ticket">訂票</button>
+                                        <button class="candidate">候補</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ticket py-4 px-4">
+                                <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
+                                    <a href="">山線</a>
+                                    <button><i class="bi bi-three-dots"></i></button>
+                                </div>
+                                <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
+                                    <div class="ticket-content">
+                                        <h5 class="time d-flex justify-content-center pb-1">06:12</h5>
+                                        <div class="location d-flex justify-content-between">
+                                            <p>基隆</p>
+                                            <p>Keelung</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="ticket-content">
+                                        <p class="spend-time d-flex justify-content-center">1 小時 21 分</p>
+                                        <img src="./imag/right-long-arrow.png" class="d-flex justify-content-center"
+                                            alt="right-long-arrow">
+                                    </div>
+
+                                    <div class="ticket-content">
+                                        <h5 class="time d-flex justify-content-center pb-1">07:33</h5>
+                                        <div class="location d-flex justify-content-between">
+                                            <p>桃園</p>
+                                            <p>Taoyuan</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ticket-item d-flex justify-content-between align-items-center">
+                                    <h6>自強105</h6>
+                                    <div>
+                                        <button class="book-ticket">訂票</button>
+                                        <button class="candidate">候補</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- display-box-pc -->
+                            <div class="display-box-pc h-100">
+                                <div class="ticket-content h-100 d-flex justify-content-between align-items-center">
+                                    <!-- ticket-pc -->
+                                    <div class="ticket-item">
+                                        <h6 class="d-flex justify-content-center">自強105</h6>
+                                        <div class="station d-flex justify-content-center align-items-center">
+                                            <p>基隆</p>
+                                            <p><i class="bi bi-arrow-right ms-2 me-2"></i></p>
+                                            <p>潮州</p>
+                                        </div>
+                                    </div>
+                                    <div class="ticket-item d-flex justify-content-start align-items-center">
+                                        <h5 class="time d-flex justify-content-center  me-2">06:12</h5>
+                                        <i class="bi bi-arrow-right me-2"></i>
+                                        <h5 class="time d-flex justify-content-center ">07:33</h5>
+                                    </div>
+                                    <div class="ticket-item">
+                                        <p class="spend-time">1 小時 21 分</p>
+                                    </div>
+                                    <div class="ticket-item"><a href="">山線</a></div>
+                                    <div class="ticket-item">
+                                        <button><img src="./imag/icon-train.png" alt=""></button>
+                                        <button><img src="./imag/icon-bike.png" alt=""></button>
+                                        <button><img src="./imag/icon-pregnant.png" alt=""></button>
+                                        <button><img src="./imag/icon-wheelchair.png" alt=""></button>
+                                    </div>
+                                    <div class="ticket-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <button class="book-ticket">訂票</button>
+                                            <button class="candidate">候補</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ticket-content d-flex justify-content-between align-items-center">
+                                    <!-- ticket-pc -->
+                                    <div class="ticket-item">
+                                        <h6 class="d-flex justify-content-center">自強105</h6>
+                                        <div class="station d-flex justify-content-center align-items-center">
+                                            <p>基隆</p>
+                                            <p><i class="bi bi-arrow-right ms-2 me-2"></i></p>
+                                            <p>潮州</p>
+                                        </div>
+                                    </div>
+                                    <div class="ticket-item d-flex justify-content-start align-items-center">
+                                        <h5 class="time d-flex justify-content-center  me-2">06:12</h5>
+                                        <i class="bi bi-arrow-right me-2"></i>
+                                        <h5 class="time d-flex justify-content-center ">07:33</h5>
+                                    </div>
+                                    <div class="ticket-item">
+                                        <p class="spend-time">1 小時 21 分</p>
+                                    </div>
+                                    <div class="ticket-item"><a href="">山線</a></div>
+                                    <div class="ticket-item">
+                                        <button><img src="./imag/icon-train.png" alt=""></button>
+                                        <button><img src="./imag/icon-bike.png" alt=""></button>
+                                        <button><img src="./imag/icon-pregnant.png" alt=""></button>
+                                        <button><img src="./imag/icon-wheelchair.png" alt=""></button>
+                                    </div>
+                                    <div class="ticket-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <button class="book-ticket">訂票</button>
+                                            <button class="candidate">候補</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ticket-content d-flex justify-content-between align-items-center">
+                                    <!-- ticket-pc -->
+                                    <div class="ticket-item">
+                                        <h6 class="d-flex justify-content-center">自強105</h6>
+                                        <div class="station d-flex justify-content-center align-items-center">
+                                            <p>基隆</p>
+                                            <p><i class="bi bi-arrow-right ms-2 me-2"></i></p>
+                                            <p>潮州</p>
+                                        </div>
+                                    </div>
+                                    <div class="ticket-item d-flex justify-content-start align-items-center">
+                                        <h5 class="time d-flex justify-content-center  me-2">06:12</h5>
+                                        <i class="bi bi-arrow-right me-2"></i>
+                                        <h5 class="time d-flex justify-content-center ">07:33</h5>
+                                    </div>
+                                    <div class="ticket-item">
+                                        <p class="spend-time">1 小時 21 分</p>
+                                    </div>
+                                    <div class="ticket-item"><a href="">山線</a></div>
+                                    <div class="ticket-item">
+                                        <button><img src="./imag/icon-train.png" alt=""></button>
+                                        <button><img src="./imag/icon-bike.png" alt=""></button>
+                                        <button><img src="./imag/icon-pregnant.png" alt=""></button>
+                                        <button><img src="./imag/icon-wheelchair.png" alt=""></button>
+                                    </div>
+                                    <div class="ticket-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <button class="book-ticket">訂票</button>
+                                            <button class="candidate">候補</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="screening-left d-flex justify-content-start align-items-center">
-                            <a href="" class="me-1">票價資訊</a>
-                            <button><i class="bi bi-sliders"></i></button>
-                        </div>
 
                     </div>
-                    <!-- display-box -->
-                    <div class="display-box">
-                        <!-- ticket -->
-                        <div class="ticket py-4 px-4">
-                            <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
-                                <a href="">山線</a>
-                                <button><i class="bi bi-three-dots"></i></button>
-                            </div>
-                            <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
-                                <div class="ticket-content">
-                                    <h5 class="time d-flex justify-content-center pb-1">06:12</h5>
-                                    <div class="location d-flex justify-content-between">
-                                        <p>基隆</p>
-                                        <p>Keelung</p>
+                </div>
+                <!-- confirm-box -->
+                <div class="confirm-box">
+                    <div class="confirm-item bg-white rounded-3 shadow">
+                        <h5>訂票確認</h5>
+                        <div class="ticket-box">
+                            <div class="modal-ticket">
+                                <div class="head">
+                                </div>
+                                <div class="content d-flex justify-content-between align-items-start">
+                                    <div class="ticket-desc w-100 me-4"">
+                                <!-- date -->
+                                <h6 class=" date">2025/08/07(週四)</h6>
+                                        <!-- trip -->
+                                        <div class="trip pb-2">
+                                            <div
+                                                class="ticket-item d-flex justify-content-between align-items-center pb-3">
+                                                <div class="ticket-content">
+                                                    <h5 class="time d-flex justify-content-center pb-1">06:12</h5>
+                                                    <div class="location d-flex justify-content-between">
+                                                        <p>基隆</p>
+                                                        <p>Keelung</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="ticket-content d-flex flex-column ">
+                                                    <!-- <p class="spend-time ">1 小時 21 分</p> -->
+                                                    <p class="arrow-right">
+                                                        <i class="bi bi-arrow-right d-flex justify-content-center"></i>
+                                                    </p>
+                                                </div>
+
+                                                <div class="ticket-content">
+                                                    <h5 class="time d-flex justify-content-center pb-1">07:33</h5>
+                                                    <div class="location d-flex justify-content-between">
+                                                        <p>桃園</p>
+                                                        <p>Taoyuan</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- train -->
+                                        <button class="train">
+                                            自強105
+                                        </button>
+                                        <!-- passenger -->
+                                        <div class="passenger-item pt-2">
+                                            <div class="passenger d-flex justify-content-between align-items-center">
+                                                <div class="d-flex">
+                                                    <p class="me-2">全票</p>
+                                                    <p>1人</p>
+                                                </div>
+                                                <p>$192</p>
+                                            </div>
+                                            <div class="passenger d-flex justify-content-between align-items-center">
+                                                <div class="d-flex">
+                                                    <p class="me-2">親子</p>
+                                                    <p>1人</p>
+                                                </div>
+                                                <p>$96</p>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                    <button class="delete"><i class="bi bi-x"></i></button>
 
-                                <div class="ticket-content">
-                                    <p class="spend-time d-flex justify-content-center">1 小時 21 分</p>
-                                    <img src="./imag/right-long-arrow.png" class="d-flex justify-content-center"
-                                        alt="right-long-arrow">
-                                </div>
-
-                                <div class="ticket-content">
-                                    <h5 class="time d-flex justify-content-center pb-1">07:33</h5>
-                                    <div class="location d-flex justify-content-between">
-                                        <p>桃園</p>
-                                        <p>Taoyuan</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="ticket-item d-flex justify-content-between align-items-center">
-                                <h6>自強105</h6>
-                                <div>
-                                    <button>訂票</button>
-                                    <button>候補</button>
                                 </div>
                             </div>
                         </div>
-                        <div class="ticket py-4 px-4">
-                            <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
-                                <a href="">山線</a>
-                                <button><i class="bi bi-three-dots"></i></button>
-                            </div>
-                            <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
-                                <div class="ticket-content">
-                                    <h5 class="time d-flex justify-content-center pb-1">06:12</h5>
-                                    <div class="location d-flex justify-content-between">
-                                        <p>基隆</p>
-                                        <p>Keelung</p>
-                                    </div>
-                                </div>
-
-                                <div class="ticket-content">
-                                    <p class="spend-time d-flex justify-content-center">1 小時 21 分</p>
-                                    <img src="./imag/right-long-arrow.png" class="d-flex justify-content-center"
-                                        alt="right-long-arrow">
-                                </div>
-
-                                <div class="ticket-content">
-                                    <h5 class="time d-flex justify-content-center pb-1">07:33</h5>
-                                    <div class="location d-flex justify-content-between">
-                                        <p>桃園</p>
-                                        <p>Taoyuan</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="ticket-item d-flex justify-content-between align-items-center">
-                                <h6>自強105</h6>
-                                <div>
-                                    <button>訂票</button>
-                                    <button>候補</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ticket py-4 px-4">
-                            <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
-                                <a href="">山線</a>
-                                <button><i class="bi bi-three-dots"></i></button>
-                            </div>
-                            <div class="ticket-item d-flex justify-content-between align-items-center pb-3">
-                                <div class="ticket-content">
-                                    <h5 class="time d-flex justify-content-center pb-1">06:12</h5>
-                                    <div class="location d-flex justify-content-between">
-                                        <p>基隆</p>
-                                        <p>Keelung</p>
-                                    </div>
-                                </div>
-
-                                <div class="ticket-content">
-                                    <p class="spend-time d-flex justify-content-center">1 小時 21 分</p>
-                                    <img src="./imag/right-long-arrow.png" class="d-flex justify-content-center"
-                                        alt="right-long-arrow">
-                                </div>
-
-                                <div class="ticket-content">
-                                    <h5 class="time d-flex justify-content-center pb-1">07:33</h5>
-                                    <div class="location d-flex justify-content-between">
-                                        <p>桃園</p>
-                                        <p>Taoyuan</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="ticket-item d-flex justify-content-between align-items-center">
-                                <h6>自強105</h6>
-                                <div>
-                                    <button>訂票</button>
-                                    <button>候補</button>
-                                </div>
-                            </div>
+                        <div class="total d-flex justify-content-between align-items-center">
+                            <p>總計</p>
+                            <div class="currency ms-auto me-1">NT$</div>
+                            <H4 class="price">864</H4>
                         </div>
                     </div>
+                    <button class="checkout-btn w-100">
+                        <h6>前往結帳</h6>
+                    </button>
                 </div>
+
             </div>
         </div>
     </main>
@@ -398,8 +598,9 @@
 
                                         <div class="ticket-content">
                                             <p class="spend-time d-flex justify-content-center">1 小時 21 分</p>
-                                            <img src="./imag/right-long-arrow.png" class="d-flex justify-content-center"
-                                                alt="right-long-arrow">
+                                            <p class="arrow-right">
+                                                <i class="bi bi-arrow-right d-flex justify-content-center"></i>
+                                            </p>
                                         </div>
 
                                         <div class="ticket-content">

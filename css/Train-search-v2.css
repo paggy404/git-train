@@ -29,6 +29,10 @@
 }
 
 /* modal-ticket */
+.modal-ticket {
+    border-bottom: var(--gray-50-color) solid 1px;
+    padding: 1rem 0;
+}
 
 .modal-ticket .delete {
     background-color: var(--bgc-w-color);
@@ -114,25 +118,26 @@
 }
 
 .ticket-item:nth-child(1) i {
-    color: var(--gray-600-color);
+    color: var(--text-color);
     font-size: 1.25rem;
 }
 
-.ticket-item:nth-child(3) button:nth-child(1) {
+.ticket-item .book-ticket {
     background-color: var(--primary-color);
     padding: 8px 12px;
     color: var(--bgc-w-color);
     border-radius: .375rem;
 }
 
-.ticket-item:nth-child(3) button:nth-child(2) {
+.ticket-item .candidate {
     padding: 8px 12px;
     color: var(--primary-color);
     border-radius: .375rem;
     border: var(--primary-color) solid 1px;
 }
 
-.spend-time {
+.spend-time,
+.ticket-item .station p {
     color: var(--gray-600-color);
     margin-bottom: 0;
 }
@@ -145,13 +150,25 @@ h4 {
     color: var(--text-color);
 }
 
+.display-box-pc .ticket-content {
+    padding: 2.25rem 2.5rem;
+    border-bottom: var(--gray-50-color) solid 1px;
+
+}
+
 .ticket-content p,
+.ticket-item .station p,
 a {
     font-size: .75rem;
+    margin-bottom: 0;
 }
 
 .ticket-item a {
     color: var(--primary-color);
+}
+
+.display-box-pc {
+    display: none;
 }
 
 .screening-left a {
@@ -169,9 +186,11 @@ a {
 
 .display-box {
     height: 100%;
-
 }
 
+.display-box-pc {
+    display: ;
+}
 
 .display-card button,
 .screening-left button {
@@ -257,36 +276,40 @@ a {
 
 .container {
     padding: 1.5rem;
+    margin-top: 4.75rem;
 }
 
 /* search */
 .search {
     background-color: var(--bgc-w-color);
-    padding: 1rem;
+    padding: 2.5rem;
 
 }
 
-/* header */
-header nav {
-    height: 6.25rem;
+.select-box {
+    margin-bottom: .75rem;
 }
 
 /* main */
 
+.confirm-box {
+    display: none;
+}
+
 main {
     height: 100%;
-    padding-top: 3.125rem;
     padding-bottom: 20%;
 }
 
-main h4 {
-    font-weight: var(--bold-font-weight);
+main h2 {
+    font-weight: var(--semi-bold-font-weight);
+    margin: 1.5rem 0;
 }
 
 .bg {
     position: absolute;
     background-color: var(--bgc-b-color);
-    height: 35.75rem;
+    height: 43.0625rem;
     width: 100%;
     z-index: -1;
 }
@@ -295,10 +318,122 @@ main .container {
     height: 100%;
 }
 
+/* header */
+
 .navbar-toggler-icon {
     color: var(--text-color);
 }
 
-@media screen and (min-width: 767px) {}
+.navbar-nav li {
+    margin-right: auto;
+}
+
+.navbar-2 {
+    display: block;
+}
+
+
+
+
+@media screen and (min-width: 767px) {
+
+    form .form-item {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin-bottom: 1.25rem;
+    }
+
+    form .form-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .select-box {
+        margin-bottom: 0;
+    }
+
+    .select-box:last-child {
+        margin-left: 1.25rem;
+    }
+
+
+    .confirm-ticket {
+        display: none;
+    }
+
+    /* main */
+    /* display-box */
+    .display-box .ticket {
+        display: none;
+    }
+
+    .display-box-pc {
+        display: block;
+    }
+
+    /* search-box */
+    .search-box {
+        width: 75%;
+        margin-right: 1.25rem;
+    }
+
+    /* confirm-box */
+
+    .confirm-box .checkout-btn {
+        margin-top: 1.25rem;
+    }
+
+    .confirm-box .total {
+        padding: 1rem;
+        background-color: var(--gray-50-light-color);
+    }
+
+    .confirm-box .total p {
+        margin-bottom: 0;
+        font-size: .75rem;
+        color: var(--gray-600-color);
+    }
+
+    .confirm-box .ticket-box {
+        padding: 0 1rem;
+    }
+
+    .confirm-box {
+        display: block;
+        width: 25%;
+    }
+
+    .confirm-box>.confirm-item>h5 {
+        padding: 1rem;
+        border-bottom: var(--gray-50-color) solid 1px;
+    }
+
+    .bg {
+        height: 36.625rem;
+    }
+
+    main h2 {
+        margin: 32px 0;
+    }
+
+    /* header */
+    .navbar-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-nav li {
+        margin-right: 0;
+    }
+
+    .navbar-2 {
+        display: flex;
+    }
+
+    .navbar-2 .btn {
+        margin-left: 1rem;
+    }
+}
 
 @media screen and (min-width: 1200px) {}
