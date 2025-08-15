@@ -70,12 +70,17 @@
     margin-bottom: 0;
 }
 
+.passenger-pc,
+.train-pc {
+    display: none;
+}
+
 /* onfirm-ticket */
 .currency {
     margin: 0;
 }
 
-.checkout-btn {
+.btn-checkout {
     background-color: var(--primary-color);
     padding: 16px 24px;
     color: var(--bgc-w-color);
@@ -83,7 +88,7 @@
     border: none;
 }
 
-.checkout-btn h6 {
+.btn-checkout h6 {
     color: var(--bgc-w-color);
     font-weight: var(--semi-bold-font-weight);
 }
@@ -129,6 +134,10 @@
     border-radius: .375rem;
 }
 
+.ticket-item .book-ticket:hover {
+    background-color: var(--primary-400-color);
+}
+
 .ticket-item .candidate {
     padding: 8px 12px;
     color: var(--primary-color);
@@ -136,10 +145,18 @@
     border: var(--primary-color) solid 1px;
 }
 
+.ticket-item .candidate:hover {
+    background-color: var(--primary-light-color);
+}
+
 .spend-time,
 .ticket-item .station p {
     color: var(--gray-600-color);
     margin-bottom: 0;
+}
+
+.ticket-item a:hover {
+    color: var(--primary-400-color);
 }
 
 .location p,
@@ -174,6 +191,10 @@ a {
 .screening-left a {
     font-size: .75rem;
     color: var(--primary-color);
+}
+
+.screening-left a:hover {
+    color: var(--primary-400-color);
 }
 
 /* 車票第三張，無法全顯示？ */
@@ -221,11 +242,33 @@ a {
     color: var(--gray-300-color);
 }
 
-/* 沒反應？
-.form-control:active,
-.form-select:active {
-    color: var(--text-color);
-} */
+#bookingForm .select-box:nth-child(2) {
+    position: relative;
+    width: 20.125rem;
+}
+
+
+
+#bookingForm .station {
+    width: 8.75rem;
+}
+
+
+#bookingForm .station>div {
+    position: relative;
+}
+
+.btn-search {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.btn-search>i {
+    font-size: 1rem;
+}
+
 
 #bookingForm .form-check-input:checked {
     background-color: var(--primary-color);
@@ -282,7 +325,7 @@ a {
 /* search */
 .search {
     background-color: var(--bgc-w-color);
-    padding: 2.5rem;
+    padding: 1.5rem;
 
 }
 
@@ -309,7 +352,7 @@ main h2 {
 .bg {
     position: absolute;
     background-color: var(--bgc-b-color);
-    height: 43.0625rem;
+    height: 40.875rem;
     width: 100%;
     z-index: -1;
 }
@@ -317,6 +360,11 @@ main h2 {
 main .container {
     height: 100%;
 }
+
+/* main .contents {
+    padding: 0 1.5rem;
+
+} */
 
 /* header */
 
@@ -329,13 +377,70 @@ main .container {
 }
 
 .navbar-2 {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 26.25rem;
+}
+
+.navbar-2 .btn-translate,
+.navbar-2 .btn-translate>i {
+    color: var(--gray-600-color);
+    margin-bottom: 1rem;
+}
+
+
+.navbar-2 .btn-log {
+    border: none;
+    background-color: var(--primary-color);
+    color: var(--bgc-w-color);
+}
+
+.navbar-2 .btn-log:hover,
+.btn-checkout:hover {
+    background-color: var(--primary-400-color)
+}
+
+.nav-link {
+    color: var(--text-color);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-link:active {
+    color: var(--primary-color);
+}
+
+.navbar-2 button {
+    margin-top: 1rem;
+}
+
+.navbar-2>form {
+    margin-top: 1rem;
+}
+
+.navbar-2 .btn-search {
+    margin-top: 0;
+}
+
+.navbar-2>form {
+    position: relative;
+    width: 12.1875rem;
 }
 
 
 
 
 @media screen and (min-width: 767px) {
+    .bg {
+        height: 38.875rem;
+    }
+
+    #bookingForm .station {
+        width: 16.875rem;
+    }
 
     form .form-item {
         display: flex;
@@ -344,18 +449,18 @@ main .container {
         margin-bottom: 1.25rem;
     }
 
+    form .form-item:nth-last-child(2) {
+        display: block;
+    }
+
     form .form-item:last-child {
         margin-bottom: 0;
     }
 
     .select-box {
         margin-bottom: 0;
+        margin-right: 1.25rem;
     }
-
-    .select-box:last-child {
-        margin-left: 1.25rem;
-    }
-
 
     .confirm-ticket {
         display: none;
@@ -377,9 +482,13 @@ main .container {
         margin-right: 1.25rem;
     }
 
+    .screening-left a {
+        margin-right: 1.25rem;
+    }
+
     /* confirm-box */
 
-    .confirm-box .checkout-btn {
+    .confirm-box .btn-checkout {
         margin-top: 1.25rem;
     }
 
@@ -406,34 +515,84 @@ main .container {
     .confirm-box>.confirm-item>h5 {
         padding: 1rem;
         border-bottom: var(--gray-50-color) solid 1px;
+        font-weight: var(--bold-font-weight);
     }
 
-    .bg {
-        height: 36.625rem;
+    .passenger {
+        margin-right: 1.25rem;
     }
+
+
 
     main h2 {
         margin: 32px 0;
     }
 
     /* header */
-    .navbar-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+
 
     .navbar-nav li {
         margin-right: 0;
     }
 
     .navbar-2 {
+        margin-top: 52.5rem;
+    }
+
+
+
+}
+
+@media screen and (min-width: 1200px) {
+    .navbar-2 {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    .navbar-2>form {
+        margin-top: 0rem;
+    }
+
+
+    .navbar-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-2 button {
+        margin-top: 0rem;
+        margin-left: 1rem;
+    }
+
+    .navbar-2 .btn-translate {
+        margin-bottom: 0;
+    }
+
+    .navbar-nav li {
+        margin-right: 1rem;
+    }
+
+    form .form-item:nth-last-child(2) {
         display: flex;
     }
 
-    .navbar-2 .btn {
-        margin-left: 1rem;
+    .bg {
+        height: 34.5625rem;
+    }
+
+    .passenger-pc,
+    .train-pc {
+        display: block;
+        width: 18.125rem;
+    }
+
+
+
+    .passenger,
+    .train {
+        display: none;
     }
 }
-
-@media screen and (min-width: 1200px) {}
